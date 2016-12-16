@@ -36,7 +36,7 @@ public class startApp {
 		capabilities.setCapability(CapabilityType.VERSION, "5.1.0"); // Версия андроида
 		capabilities.setCapability(CapabilityType.PLATFORM, "Android"); // Платформа у нас андроид
 		// настраиваем подключение
-		capabilities.setCapability("deviceName", "192.168.134.101:5555"); // нужно чтобы попасть на эмулятор
+		capabilities.setCapability("deviceName", "192.168.118.101:5555"); // нужно чтобы попасть на эмулятор
 		capabilities.setCapability("app", app.getAbsolutePath()); // что мы запускаем (берем из переменной app)
 		// дампим пакет и получаем ланчактивити - com.vbanthia.androidsampleapp.MainActivity
 		capabilities.setCapability("appPackage", "com.vbanthia.androidsampleapp"); // имя пакета
