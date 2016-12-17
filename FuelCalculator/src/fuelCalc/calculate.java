@@ -7,11 +7,11 @@ public class calculate {
 
 	public static void main(String[] args) {
 		
-		Scanner input = new Scanner(System.in);
-		
+		Scanner input = new Scanner(System.in);	
 		
 		System.out.println("Сколько топлива вошло?");
 		float fuelBurned = input.nextInt();
+		
 		System.out.println("Сколько километров проехал?");
 		float pathTraveled = input.nextInt();
 		
