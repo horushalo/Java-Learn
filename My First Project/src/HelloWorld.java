@@ -6,9 +6,7 @@ public class HelloWorld {
 		 String say="Hello World!";
 		
 			System.out.println(say);
-			
-			
-			
+
 
 	}
 
