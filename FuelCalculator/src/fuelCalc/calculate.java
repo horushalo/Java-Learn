@@ -18,6 +18,8 @@ public class calculate {
 		String formattedOutput = new DecimalFormat("#0.00").format((fuelBurned/pathTraveled)*100);
 		
 		System.out.println("Расход топлива: " + formattedOutput);
+		
+		input.close();
 
 	}
 
