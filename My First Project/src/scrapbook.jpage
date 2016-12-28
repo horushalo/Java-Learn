@@ -1,5 +1,3 @@
-int myScore=10;
-myScore--;
-myScore=myScore*2;
-myScore=myScore/3;
-System.out.println("My score is " + myScore);
+String state = "Texas";
+
+if (state.equals("Texas") | state.equals("California"))
