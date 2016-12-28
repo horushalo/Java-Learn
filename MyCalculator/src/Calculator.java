@@ -39,7 +39,7 @@ public class Calculator {
 			displayField.setHorizontalAlignment(SwingConstants.RIGHT);
 			windowContent.add("North", displayField);
 			
-			
+			//Button[] numButtons= new Button[10];
 			
 			button0 = new JButton("0");
 			button1 = new JButton("1");
