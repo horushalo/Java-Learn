@@ -1,5 +1,3 @@
-import javafx.stage.StageStyle;
-
 public class ReportCard {
 			
 	public char convertGrades(int testResult){
