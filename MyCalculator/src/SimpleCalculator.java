@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.FlowLayout;
+import java.awt.*;
 
 
 public class SimpleCalculator {
@@ -7,8 +7,9 @@ public class SimpleCalculator {
 	public static void main(String[] args) {
 		
 		JPanel windowContent = new JPanel();
-		FlowLayout fl = new FlowLayout();
-		windowContent.setLayout(fl);
+		
+		GridLayout gl = new GridLayout(4,2);
+		windowContent.setLayout(gl);
 		
 		JLabel label1 = new JLabel("Number 1:");
 		JTextField field1 = new JTextField(10);
