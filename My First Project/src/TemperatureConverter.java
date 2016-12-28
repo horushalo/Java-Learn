@@ -26,7 +26,7 @@ public class TemperatureConverter {
 		
 		TemperatureConverter myTC = new TemperatureConverter();
 		
-		myTC.convertTemp(25, 'F');
+		myTC.convertTemp(451, 'C');
 
 	}
 
