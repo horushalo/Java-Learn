@@ -5,6 +5,8 @@ public class Calculator {
 
 	JPanel windowContent;
 	JTextField displayField;
+	
+	/*
 	JButton button0;
 	JButton button1;
 	JButton button2;
@@ -15,10 +17,10 @@ public class Calculator {
 	JButton button7;
 	JButton button8;
 	JButton button9;
+	*/
+	
 	JButton buttonPoint;
-	
 	JButton buttonEqual;
-	
 	JButton buttonPlus;
 	JButton buttonMinus;
 	JButton buttonDivide;
@@ -42,7 +44,10 @@ public class Calculator {
 			
 			
 			// Cycle replaces individual construction of each button 
+			//полный массив переменных типа JButton, так что обьявлять каждую вначале нам не надо
 			JButton[] buttons= new JButton[10];
+			
+			//берем каждую переменную из массива и присваиваем каждой экземпляр класса JButton, сразу пишем строковое значение номера кнопки.
 			for (int i = 0; i < buttons.length; i++) {
 				buttons[i] = new JButton(String.valueOf(i));
 			}
@@ -73,9 +78,11 @@ public class Calculator {
 			p1.setLayout(gl);
 			
 			// Cycle replaces individual buttons adding
+			
 			for (int i = 0; i < buttons.length; i++) {
 				p1.add(buttons[i]);
 			}
+			
 			
 			/*
 			p1.add(button0);
@@ -113,8 +120,20 @@ public class Calculator {
 			
 			frame.setVisible(true);
 			
-			CalculatorEngine calcEngine = new CalculatorEngine();
-			button0.addActionListener(calcEngine);
+			//Listener добавляем на кнопки через переменную, но переменные у нас в массиве перечислены, помним об этом и обращаемся в массив по номеру.
+			
+			for (int i = 0; i < buttons.length; i++) {
+				buttons[i].addActionListener(new CalculatorEngine());
+			}
+			
+			//мне лень делать массив для символьных кнопок
+			buttonDivide.addActionListener(new CalculatorEngine());
+			buttonEqual.addActionListener(new CalculatorEngine());
+			buttonMinus.addActionListener(new CalculatorEngine());
+			buttonMultiply.addActionListener(new CalculatorEngine());
+			buttonPlus.addActionListener(new CalculatorEngine());
+			buttonPoint.addActionListener(new CalculatorEngine());
+			
 		}
 	
 	public static void main(String[] args) {
