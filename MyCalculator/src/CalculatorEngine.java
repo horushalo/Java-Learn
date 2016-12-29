@@ -11,6 +11,7 @@ public class CalculatorEngine implements ActionListener {
 		
 		Object eSource = e.getSource();
 		
+		
 		if (eSource instanceof JButton) {
 			
 			clickedButton = (JButton) eSource;
@@ -20,11 +21,11 @@ public class CalculatorEngine implements ActionListener {
 			textField = (JFormattedTextField) eSource;
 		}
 		
-
 		
 		
-		//String clickedButtonLabel = clickedButton.getText();
-		//JOptionPane.showConfirmDialog(null, clickedButtonLabel + " was clicked.", "Clicked: " + clickedButtonLabel, JOptionPane.PLAIN_MESSAGE);
+		
+		String clickedButtonLabel = clickedButton.getText();
+		JOptionPane.showConfirmDialog(null, clickedButtonLabel + " was clicked.", "Clicked: " + clickedButtonLabel, JOptionPane.PLAIN_MESSAGE);
 		//System.out.println(clickedButton);
 		
 	}
