@@ -104,9 +104,6 @@ public class Calculator {
 			p2.add(buttonDivide);
 			p2.add(buttonMultiply);
 			
-			
-			
-			
 			windowContent.add("Center", p1);
 			windowContent.add("East", p2);
 			JFrame frame = new JFrame("Calculator");
@@ -116,11 +113,14 @@ public class Calculator {
 			
 			frame.setVisible(true);
 			
+			CalculatorEngine calcEngine = new CalculatorEngine();
+			button0.addActionListener(calcEngine);
 		}
 	
 	public static void main(String[] args) {
 		
 		Calculator calc = new Calculator();
+
 		
 	}
 
