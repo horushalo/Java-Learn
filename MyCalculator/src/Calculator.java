@@ -73,7 +73,7 @@ public class Calculator {
 			p1.setLayout(gl);
 			
 			// Cycle replaces individual buttons adding
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < buttons.length; i++) {
 				p1.add(buttons[i]);
 			}
 			
