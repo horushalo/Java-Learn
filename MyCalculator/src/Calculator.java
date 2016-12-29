@@ -24,6 +24,7 @@ public class Calculator {
 	JButton buttonDivide;
 	JButton buttonMultiply;
 	
+	
 	JPanel p1;
 	JPanel p2;
 	
@@ -39,8 +40,14 @@ public class Calculator {
 			displayField.setHorizontalAlignment(SwingConstants.RIGHT);
 			windowContent.add("North", displayField);
 			
-			//Button[] numButtons= new Button[10];
 			
+			// Cycle replaces individual construction of each button 
+			JButton[] buttons= new JButton[10];
+			for (int i = 0; i < buttons.length; i++) {
+				buttons[i] = new JButton(String.valueOf(i));
+			}
+			
+			/*
 			button0 = new JButton("0");
 			button1 = new JButton("1");
 			button2 = new JButton("2");
@@ -51,7 +58,8 @@ public class Calculator {
 			button7 = new JButton("7");
 			button8 = new JButton("8");
 			button9 = new JButton("9");
-			
+			*/
+			// END
 			
 			buttonPoint = new JButton(".");
 			buttonEqual = new JButton("=");
@@ -64,6 +72,12 @@ public class Calculator {
 			GridLayout gl = new GridLayout(4,3);
 			p1.setLayout(gl);
 			
+			// Cycle replaces individual buttons adding
+			for (int i = 0; i < 10; i++) {
+				p1.add(buttons[i]);
+			}
+			
+			/*
 			p1.add(button0);
 			p1.add(button1);
 			p1.add(button2);
@@ -74,6 +88,9 @@ public class Calculator {
 			p1.add(button7);
 			p1.add(button8);
 			p1.add(button9);
+			*/
+			// END
+			
 			p1.add(buttonPoint);
 			p1.add(buttonEqual);
 			
