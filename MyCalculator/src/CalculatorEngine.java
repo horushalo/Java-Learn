@@ -26,7 +26,9 @@ public class CalculatorEngine implements ActionListener {
 		
 		String clickedButtonLabel = clickedButton.getText();
 		JOptionPane.showConfirmDialog(null, clickedButtonLabel + " was clicked.", "Clicked: " + clickedButtonLabel, JOptionPane.PLAIN_MESSAGE);
-		//System.out.println(clickedButton);
+		System.out.println(clickedButtonLabel);
+		
+		
 		
 	}
 	
