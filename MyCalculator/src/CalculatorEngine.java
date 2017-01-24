@@ -41,9 +41,13 @@ public class CalculatorEngine implements ActionListener {
 			currentResult=displayValue;
 			parent.displayField.setText("");
 		}else if (src == parent.buttonDivide){
-			selectedAction = '/';
-			currentResult=displayValue;
-			parent.displayField.setText("");
+			if (!"".equals(dispFieldText)){
+				selectedAction = '/';
+				currentResult=displayValue;
+				parent.displayField.setText("");
+			}else{
+				parent.displayField.setText("На ноль делить нельзя!");;
+			}
 		} else if (src == parent.buttonMultiply){
 			selectedAction = '*';
 			currentResult=displayValue;
@@ -67,12 +71,14 @@ public class CalculatorEngine implements ActionListener {
 			}else if (selectedAction=='/'){
 				currentResult /=displayValue;
 				parent.displayField.setText(""+currentResult);
+
 			
 			}else if (selectedAction=='*'){
 				currentResult*=displayValue;
 				parent.displayField.setText(""+currentResult);
-		}
-			} else{
+				
+			}
+		} else{
 				
 				// Для всех цифровых кнопок присоединить надпись на кнопке к надписи в дисплее
 				
