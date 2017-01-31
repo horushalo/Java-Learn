@@ -239,7 +239,7 @@ public class TicTacToe extends Applet implements ActionListener{
 		if (selectedSquare == -1)
 			
 			selectedSquare = findEmptySquare("X");
-	}
+	
 	
 	// если selectedSquare все еще равен -1, то
 	// попытаетс€ зан€ть центральную клетку
@@ -257,7 +257,7 @@ public class TicTacToe extends Applet implements ActionListener{
 		selectedSquare = getRandomSquare();
 	}
 	
-	squares[selectedSquare].setlabel("O");
+	squares[selectedSquare].setLabel("O");
 
 }
 
@@ -271,10 +271,155 @@ public class TicTacToe extends Applet implements ActionListener{
 * с одинаковыми надпис€ми
 */
 
+int findEmptySquare(String player) {
+	
+	int weight[] = new int[9];
+	
+	for (int i = 0; i < 0; i++) {
+		
+		if (squares[i].getLabel().equals("O"))
+			weight[i] = -1;
+		else if (squares[i].getLabel().equals("X"))
+			weight[i] = 1;
+		else
+			weight[i] = 0;
+	}
+	
+	int twoWeights = player.equals("O") ? -2 : 2;
+	
+		// ѕроверим, есть ли в р€ду 1 две одинаковые клетки и
+		// одна пуста€.
+		if (weight[0] + weight[1] + weight[2] == twoWeights) {
+			
+			if (weight[0] + weight[1] + weight[2] == twoWeights) {
+				if (weight[0] == 0)
+					return 0;
+				else if (weight[1] == 0)
+					return 1;
+				else
+					return 2;
+			}
+			
+			// ѕроверим, есть ли в р€ду 2 две одинаковые клетки и
+			// одна пуста€.
+			if (weight[3] + weight[4] + weight[5] == twoWeights) {
+				
+				if (weight[3] == 0)
+					return 3;
+				else if (weight[4] == 0)
+					return 4;
+				else
+					return 5;
+			}
+			
+			// ѕроверим, есть ли в р€ду 3 две одинаковые клетки и
+			// одна пуста€.
+			if (weight[6] + weight[7] + weight[8] == twoWeights) {
+				if (weight[6] == 0)
+					return 6;
+				else if (weight[7] == 0)
+					return 7;
+				else
+					return 8;
+			}
+			
+			// ѕроверим, есть ли в колонке 1 две одинаковые клетки и
+			// одна пуста€.
+			if (weight[0] + weight[3] + weight[6] == twoWeights) {
+				if (weight[0] == 0)
+					return 0;
+				else if (weight[3] == 0)
+					return 3;
+				else
+					return 6;
+			}
+			
+			// ѕроверим, есть ли в колонке 2 две одинаковые клетки
+			// и одна пуста€.
+			if (weight[1] + weight[4] + weight[7] == twoWeights) {
+				if (weight[1] == 0)
+					return 1;
+				else if (weight[4] == 0)
+					return 4;
+				else
+					return 7;
+			}
+			
+			// ѕроверим, есть ли в колонке 3 две одинаковые клетки
+			// и одна пуста€.
+			if (weight[0] + weight[4] + weight[8] == twoWeights) {
+				if (weight[0] == 0)
+					return 0;
+				else if (weight[4] == 0)
+					return 4;
+				else
+					return 8;
+			}
+			
+			// ѕроверим, есть ли в диагонали 2 две одинаковые клетки
+			// и одна пуста€.
+			if (weight[2] + weight[4] + weight[6] == twoWeights) {
+				if (weight[2] == 0)
+					return 2;
+				else if (weight[4] == 0)
+					return 4;
+				else
+					return 6;
+			}
+		}
 
-
-
-}
+			// Ќе найдено двух одинаковых соседних клеток
+			return -1;
+		
+} // конец метода findEmptySquare()
+		
+		/**
+		* Ётот метод выбирает любую пустую клетку
+		* @return случайно выбранный номер клетки
+		*/
+		
+		int getRandomSquare() {
+			
+			boolean gotEmptySquare = false;
+			
+			int selectedSquare = -1;
+			
+			do {
+				
+				selectedSquare = (int) (Math.random() * 9);
+				
+				if (squares[selectedSquare].getLabel().equals("")){
+					gotEmptySquare = true; // чтобы закончить цикл
+				}
+			} while (!gotEmptySquare);
+			
+			return selectedSquare;
+			
+		} // конец метода getRandomSquare()
+		
+		/**
+		* Ётот метод выдел€ет выигравшую линию.
+		* @param перва€, втора€ и треть€ клетки дл€ выделени€
+		*/
+		void highlightWinner(int win1, int win2, int win3) {
+			
+			squares[win1].setBackground(Color.CYAN);
+			squares[win2].setBackground(Color.CYAN);
+			squares[win3].setBackground(Color.CYAN);
+		}
+		
+		// ƒелаем недоступными клетки и доступной кнопку ФNew GameФ
+		
+		void endTheGame(){
+			
+			newGameButton.setEnabled(true);
+			
+			for (int i=0;i<9;i++){
+				squares[i].setEnabled(false);
+			}
+		}
+		
+} // конец класса
 
 
 
